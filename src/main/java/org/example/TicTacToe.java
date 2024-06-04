@@ -22,6 +22,7 @@ public class TicTacToe {
 
         while(true) {
             System.out.printf("Current Player: %c\n",currentPlayer.getMarker());
+            board.print();
             do {
                 System.out.print("row (0-2): ");
                 row = sc.nextInt();

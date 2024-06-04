@@ -1,7 +1,6 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestClassOrder;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,6 +34,8 @@ class BoardTest {
     }
 
     @Test
-    void place() {
+    void print_test() {
+        Board board = new Board();
+        assertEquals("▁▁▁▁▁▁▁"+System.lineSeparator()+"| | | |"+System.lineSeparator()+"| | | |"+System.lineSeparator()+"| | | |"+System.lineSeparator()+"▔▔▔▔▔▔▔"+System.lineSeparator(), board.getBoardForPrint());
     }
 }
