@@ -48,4 +48,27 @@ public class Board {
         temp += System.lineSeparator();
         return temp;
     }
+    public boolean isFull(){
+        for(int i = 0; i < cells.length;i++){
+            for(int j = 0; j < cells[i].length;j++){
+                if(cells[i][j] == ' ')
+                    return false;
+            }
+        }
+        return true;
+
+    }
+    public void clear() {
+        for(int i = 0; i < cells.length;i++){
+            for(int j = 0; j < cells[i].length;j++){
+                cells[i][j] = ' ';
+            }
+        }
+    }
+    public char getCell(int r, int c){
+        return cells[r][c];
+    }
+    public char setCell(int r, int c){
+        return cells[r][c];
+    }
 }
