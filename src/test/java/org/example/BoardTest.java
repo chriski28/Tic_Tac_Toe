@@ -38,4 +38,19 @@ class BoardTest {
         Board board = new Board();
         assertEquals("▁▁▁▁▁▁▁"+System.lineSeparator()+"| | | |"+System.lineSeparator()+"| | | |"+System.lineSeparator()+"| | | |"+System.lineSeparator()+"▔▔▔▔▔▔▔"+System.lineSeparator(), board.getBoardForPrint());
     }
+    @Test
+    public void isFull_test_boardIsFull(){
+        Board board = new Board();
+        for(int i = 0; i < 3;i++){
+            for(int j = 0; j < 3;j++){
+                board.place(i,j,'X');
+            }
+    }
+        assertTrue(board.isFull());
+    }
+    @Test
+    public void isFull_test_boardIsLeer(){
+        Board board = new Board();
+        assertFalse(board.isFull());
+    }
 }
