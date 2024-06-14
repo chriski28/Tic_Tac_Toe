@@ -1,40 +1,38 @@
 package org.example;
 
 public class Board {
-    public char[][] cells;
 
-    public Board() {
+    public char [][] cells;
+
+    public Board(){
         cells = new char[3][3];
-        for (int i = 0; i < cells.length; i++) {
-            for (int n = 0; n < cells[i].length; n++) {
-                cells[i][n] = ' ';
+        for(int i = 0; i < cells.length;i++){
+            for(int j = 0; j < cells[i].length;j++){
+                cells[i][j] = ' ';
             }
+            System.out.print("\n");
         }
-    }
+    };
 
-    public boolean isCellEmpty(int x, int y) {
-        if (x >= 0 && x < 3 && y >= 0 && y < 3) {
-            if (this.cells[x][y] != ' ')
-                return false;
-
-            else
+    public boolean isCellEmpty(int x, int y){
+        if(x>=0 && x <3 && y >=0 && y<3){
+            if (cells[x][y]==' ')
                 return true;
+            else
+                return false;
 
         }
         return false;
 
     }
-
-    public void place(int x, int y, char marker) {
-        if (isCellEmpty(x, y)) {
+    public void place(int x, int y, char marker){
+        if(isCellEmpty(x,y)){
             cells[x][y] = marker;
         }
     }
-
     public void print() {
         System.out.print(getBoardForPrint());
     }
-
     public String getBoardForPrint() {
         String temp = "▁▁▁▁▁▁▁" + System.lineSeparator();
         for (int i = 0; i < cells.length; i++) {
@@ -48,6 +46,10 @@ public class Board {
         temp += System.lineSeparator();
         return temp;
     }
+
+    public char getCell(int r, int c){
+        return cells[r][c];
+    }
     public boolean isFull(){
         for(int i = 0; i < cells.length;i++){
             for(int j = 0; j < cells[i].length;j++){
@@ -56,7 +58,6 @@ public class Board {
             }
         }
         return true;
-
     }
     public void clear() {
         for(int i = 0; i < cells.length;i++){
@@ -64,11 +65,5 @@ public class Board {
                 cells[i][j] = ' ';
             }
         }
-    }
-    public char getCell(int r, int c){
-        return cells[r][c];
-    }
-    public char setCell(int r, int c){
-        return cells[r][c];
     }
 }
